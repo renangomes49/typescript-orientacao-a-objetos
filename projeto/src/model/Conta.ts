@@ -16,6 +16,14 @@ export abstract class Conta {
         this._creditos = [];
      }
      
+     get debitos(): Debito[] {
+        return this._debitos;
+    }
+
+    get creditos(): Credito[] {
+        return this._creditos;
+    }
+
      depositar(valor: number): boolean {
         if (valor > 0){
             const credito: Credito = new Credito(valor, new Date);
@@ -25,7 +33,7 @@ export abstract class Conta {
         return false;
      }
 
-     private totalCreditos(): number {
+     protected totalCreditos(): number {
         let total: number = 0;
         this._creditos.forEach((c) => {
             total += c.valor;
@@ -33,7 +41,7 @@ export abstract class Conta {
         return total;
      }
 
-     private totalDebitos(): number {
+     protected totalDebitos(): number {
         let total: number = 0;
         this._debitos.forEach((d) => {
             total += d.valor;

@@ -20,6 +20,7 @@ export class ContaCorrente extends Conta {
         if (valor > 0 && valor <= this.calcularSaldo()){
             this.sacar(valor);
             contaDestino.depositar(valor);
+            return true;
         }
         return false;
     }

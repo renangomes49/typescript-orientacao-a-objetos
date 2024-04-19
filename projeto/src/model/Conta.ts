@@ -15,5 +15,13 @@ export abstract class Conta {
         this._debitos = [];
         this._creditos = [];
      }
-    
+     
+     depositar(valor: number): boolean {
+        if (valor > 0){
+            const credito: Credito = new Credito(valor, new Date);
+            this._creditos.push(credito);
+            return true;
+        }
+        return false;
+     }
 }

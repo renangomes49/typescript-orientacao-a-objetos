@@ -12,6 +12,14 @@ export class ContaCorrente extends Conta {
         this._limite = limite;
     }
 
+    get limite(): number {
+        return this._limite;
+    }
+
+    set limite(limite: number){
+        this._limite = limite;
+    }
+
     calcularSaldo(): number {
         return this.totalCreditos() - this.totalDebitos();
     }

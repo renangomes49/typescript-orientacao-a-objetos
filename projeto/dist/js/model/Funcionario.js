@@ -11,5 +11,18 @@ class Funcionario extends Pessoa_1.Pessoa {
     autenticar() {
         return true;
     }
+    adicionarCargo(cargo) {
+        this._cargos.push(cargo);
+    }
+    toString() {
+        let cargos = "Nome: " + this.nome + ", CPF: " + this.cpf
+            + ", Telefone: " + this.telefone + ", Salário: " + this._salario;
+        cargos += "\nCargos do " + this.nome + ": [ ";
+        this._cargos.forEach((cargo) => {
+            cargos += cargo.nome + " ";
+        });
+        cargos += "]\n";
+        return cargos;
+    }
 }
 exports.Funcionario = Funcionario;

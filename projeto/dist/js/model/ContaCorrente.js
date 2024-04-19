@@ -7,5 +7,22 @@ class ContaCorrente extends Conta_1.Conta {
         super(numero, cliente);
         this._limite = limite;
     }
+    get limite() {
+        return this._limite;
+    }
+    set limite(limite) {
+        this._limite = limite;
+    }
+    calcularSaldo() {
+        return this.totalCreditos() - this.totalDebitos();
+    }
+    transferir(valor, contaDestino) {
+        if (valor > 0 && valor <= this.calcularSaldo()) {
+            this.sacar(valor);
+            contaDestino.depositar(valor);
+            return true;
+        }
+        return false;
+    }
 }
 exports.ContaCorrente = ContaCorrente;

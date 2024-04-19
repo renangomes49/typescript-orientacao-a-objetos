@@ -16,4 +16,22 @@ export class Funcionario extends Pessoa implements IUsuario {
     autenticar(): boolean {
         return true;
     }
+
+    adicionarCargo(cargo: Cargo): void {
+        this._cargos.push(cargo);
+    }
+
+    toString(): string {
+        let cargos: string = "Nome: " + this.nome + ", CPF: " + this.cpf
+            + ", Telefone: " + this.telefone + ", Salário: " + this._salario;
+        cargos += "\nCargos do " + this.nome + ": [ ";
+        
+        this._cargos.forEach((cargo) => {
+            cargos += cargo.nome + " "
+        })
+
+        cargos += "]\n"
+
+        return cargos;
+    }
 }

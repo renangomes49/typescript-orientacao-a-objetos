@@ -6,5 +6,8 @@ class ContaPoupanca extends Conta_1.Conta {
     constructor(numero, cliente) {
         super(numero, cliente);
     }
+    calcularSaldo() {
+        return this.totalCreditos() - this.totalDebitos();
+    }
 }
 exports.ContaPoupanca = ContaPoupanca;

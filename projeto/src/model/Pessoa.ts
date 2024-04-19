@@ -8,9 +8,9 @@ export abstract class Pessoa {
         this._cpf = cpf;
         this._nome = nome;
         this._telefone = telefone;
-     }
+    }
 
-     get cpf(): string {
+    get cpf(): string {
         return this._cpf;
     }
 

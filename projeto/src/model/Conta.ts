@@ -27,14 +27,22 @@ export abstract class Conta {
 
      private totalCreditos(): number {
         let total: number = 0;
-        this._creditos.forEach((c) =>{
+        this._creditos.forEach((c) => {
             total += c.valor;
-        })
+        });
+        return total;
+     }
+
+     private totalDebitos(): number {
+        let total: number = 0;
+        this._debitos.forEach((d) => {
+            total += d.valor;
+        });
         return total;
      }
 
      sacar(valor: number): boolean {
-        if (valor > 0 && valor < this.totalCreditos()){
+        if (valor > 0 && valor <= (this.totalCreditos() - this.totalDebitos())){
             const debito: Debito = new Debito(valor, new Date);
             this._debitos.push(debito);
             return true;

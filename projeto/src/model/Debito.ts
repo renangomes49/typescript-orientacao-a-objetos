@@ -6,5 +6,9 @@ export class Debito {
     constructor (valor: number, data: Date){
         this._valor = valor;
         this._data = data;
-     }
+    }
+
+    get valor(): number {
+        return this._valor;
+    }
 }

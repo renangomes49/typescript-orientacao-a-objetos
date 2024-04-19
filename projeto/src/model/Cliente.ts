@@ -19,4 +19,23 @@ export class Cliente extends Pessoa implements IUsuario {
     autenticar(): boolean {
         return true;
     }
+
+    public listaEnderecos(): string {
+        let enderecos: string = "";
+        this._enderecos.forEach((endereco) => {
+            enderecos += "[Nome do Cliente: " + this.nome
+                + ", Cep: " + endereco.cep + ", Logradouro: " + endereco.logradouro
+                + ", Numero: " + endereco.numero + ", Complemento: " + endereco.complemento
+                + ", Cidade: " + endereco.cidade + ", Estado: " + endereco.uf + "]\n"
+        })
+        return enderecos;
+    }
+
+    public adicionarEndereco(endereco: Endereco): void {
+        this._enderecos.push(endereco);
+    }
+    
+    public adicionarConta(conta: Conta): void {
+        this._contas.push(conta);
+    }
 }

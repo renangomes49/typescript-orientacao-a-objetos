@@ -12,5 +12,21 @@ class Cliente extends Pessoa_1.Pessoa {
     autenticar() {
         return true;
     }
+    listaEnderecos() {
+        let enderecos = "";
+        this._enderecos.forEach((endereco) => {
+            enderecos += "[Nome do Cliente: " + this.nome
+                + ", Cep: " + endereco.cep + ", Logradouro: " + endereco.logradouro
+                + ", Numero: " + endereco.numero + ", Complemento: " + endereco.complemento
+                + ", Cidade: " + endereco.cidade + ", Estado: " + endereco.uf + "]\n";
+        });
+        return enderecos;
+    }
+    adicionarEndereco(endereco) {
+        this._enderecos.push(endereco);
+    }
+    adicionarConta(conta) {
+        this._contas.push(conta);
+    }
 }
 exports.Cliente = Cliente;

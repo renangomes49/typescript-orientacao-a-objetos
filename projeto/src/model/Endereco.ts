@@ -21,4 +21,33 @@ export class Endereco {
         this._uf = uf;
         this._cliente = cliente;
     }
+
+
+    get cep(): string {
+        return this._cep;
+    }
+
+    get logradouro(): string {
+        return this._logradouro;
+    }
+
+    get numero(): string {
+        return this._numero;
+    }
+
+    get complemento(): string {
+        return this._complemento;
+    }
+
+    get cidade(): string {
+        return this._cidade;
+    }
+
+    get uf(): string {
+        return this._uf;
+    }
+
+    get cliente(): Cliente {
+        return this._cliente;
+    }
 }

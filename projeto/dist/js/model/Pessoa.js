@@ -7,5 +7,14 @@ class Pessoa {
         this._nome = nome;
         this._telefone = telefone;
     }
+    get cpf() {
+        return this._cpf;
+    }
+    get nome() {
+        return this._nome;
+    }
+    get telefone() {
+        return this._telefone;
+    }
 }
 exports.Pessoa = Pessoa;

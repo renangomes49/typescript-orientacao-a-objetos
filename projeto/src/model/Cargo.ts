@@ -1,5 +1,12 @@
+import { Funcionario } from "./Funcionario";
+
 export class Cargo {
-    constructor (
-        private _nome: string
-    ){ }
+
+    private _nome: string;
+    private _funcionarios: Funcionario[];
+
+    constructor (nome: string){
+        this._nome = nome;
+        this._funcionarios = [];
+     }
 }
